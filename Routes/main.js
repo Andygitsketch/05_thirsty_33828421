@@ -26,15 +26,15 @@ router.get("/search", (req, res) => {
 
 router.get('/search_result', function (req, res) {
     // TODO: search in the database
-    res.send(req.query);
+    res.send("You searched for " + req.query.search_text + " in " + req.query.category);
  });
 router.get("/register", (req,res) => {
     res.render("register.ejs",  shopData); 
 }); 
  
 router.post("/registered", (req,res) => { 
-  res.send(req.body) 
-
+ res.send(' Hello '+ req.body.first + ' '+ req.body.last +' you are now registered!');
+ 
 
     // Define our data
 //var shopData = {shopName: "The Thirsty Student", 
