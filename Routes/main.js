@@ -2,10 +2,10 @@
 const express = require("express");
 const router = express.Router();
 // Define our data
-var shopData = {shopName: "Drinks R us"};
+//var shopData = {shopName: "Drinks R us"};
 // Define our data
 var shopData = {shopName: "The Thirsty Student", 
-                productCategories:["DrinkA", "Wine", "Soft Drinks", "Hot Drinks"]}
+                productCategories:["Beer", "Wine", "Soft Drinks", "Hot Drinks"]};
 
 
 // Handle the main routes
@@ -28,6 +28,7 @@ router.get('/search_result', function (req, res) {
     // TODO: search in the database
     res.send("You searched for " + req.query.search_text + " in " + req.query.category);
  });
+ 
 router.get("/register", (req,res) => {
     res.render("register.ejs",  shopData); 
 }); 
@@ -41,5 +42,13 @@ router.post("/registered", (req,res) => {
                 //productCategories:["Beer", "Wine", "Soft Drinks", "Hot Drinks"]}
 
 }); 
+router.get("/survey", (req,res) => {
+    res.render("survey.ejs",  shopData); 
+}); 
+ 
+router.post("/sent", (req,res) => { 
+ res.send(' Thank you for your answers, we will be sending you an email soon!');
+});  
+
 // Export the router object so index.js can access it
 module.exports = router;
