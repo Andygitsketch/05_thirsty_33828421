@@ -14,7 +14,7 @@ var shopData = {shopName: "The Thirsty Student",
 //}); 
 
 router.get("/about", (req, res) => {
-    res.render("about.ejs")
+    res.render("about.ejs", shopData)
 }); 
 router.get('/',function(req,res){
     res.render('index.ejs', shopData)
