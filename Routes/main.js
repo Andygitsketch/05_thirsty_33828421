@@ -5,7 +5,7 @@ const router = express.Router();
 //var shopData = {shopName: "Drinks R us"};
 // Define our data
 var shopData = {shopName: "The Thirsty Student", 
-                productCategories:["Beer", "Wine", "Soft Drinks", "Hot Drinks"]};
+                productCategories:["Beer", "Wine", "Soft Drinks", "Hot Drinks", "ooooo"]};
 
 
 // Handle the main routes
@@ -47,8 +47,9 @@ router.get("/survey", (req,res) => {
 }); 
  
 router.post("/sent", (req,res) => { 
- res.send(' Thank you for your answers, we will be sending you an email soon!');
+    console.log(req.body)
+ res.send(' Thank you for your answers, we will be sending you an email at' + req.body.email + ' soon!');
 });  
-
+ 
 // Export the router object so index.js can access it
 module.exports = router;
