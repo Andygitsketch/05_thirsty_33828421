@@ -48,7 +48,7 @@ router.get("/survey", (req,res) => {
  
 router.post("/sent", (req,res) => { 
     console.log(req.body)
- res.send(' Thank you for your answers, we will be sending you an email at' + req.body.email + ' soon!');
+ res.send(' Thank you for your answers, we will be sending you an email at ' + req.body.usremail + ' soon!');
 });  
  
 // Export the router object so index.js can access it
